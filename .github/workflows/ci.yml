@@ -61,16 +61,6 @@ jobs:
           name: build-artifacts
           path: build/libs/
 
-      - name: Deploy .jar file to GitHub Releases
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-        run: |
-          # Path to the generated .jar file
-          JAR_FILE="build/libs/MyApp-1.0.0.jar"
-          
-          # Create a new GitHub release and upload the .jar file as an asset
-          gh release create v1.0.0 $JAR_FILE --title "MyApp v1.0.0" --notes "First release of MyApp."
-
       - name: Clean up
         run: |
           echo "Cleaning up..."

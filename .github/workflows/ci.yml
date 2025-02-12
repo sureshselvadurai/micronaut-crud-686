@@ -46,3 +46,11 @@ jobs:
           MYSQL_URL: "jdbc:mysql://localhost:3306/testdb"
           MYSQL_USER: "root"
           MYSQL_PASSWORD: "root"
+
+      - name: Run unit tests
+        run: ./gradlew test --info
+
+        env:
+          MYSQL_URL: "jdbc:mysql://localhost:3306/testdb"
+          MYSQL_USER: "root"
+          MYSQL_PASSWORD: "root"
